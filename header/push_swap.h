@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/12 19:18:29 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/13 18:56:05 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ bool	argcmore2(int argc, char **argv, t_push_swap *all);
 t_push_swap	*ft_innit(void);
 t_push_swap	*ft_mallocstruc(t_push_swap *innit);
 
+// PUSH SWAP FUNCTIONS
+void	ft_swap_a(t_push_swap *all);
+void	ft_swap_b(t_push_swap *all);
+void	ft_push_ss(t_push_swap *all);
+void	ft_push_a(t_push_swap *all);
+void	ft_push_b(t_push_swap *all);
 
 
 //CHECK SIGN

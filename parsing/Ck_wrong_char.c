@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:59:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/11 17:30:19 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/13 17:49:58 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ bool	argcmore2(int argc, char **argv,t_push_swap *all)
 		while (index < argc)
 		{
 			i = 0;
-			ft_printf("str = [%s]\n", argv[index]);
 			while (argv[index][i] != '\0')
 			{
 				if ((argv[index][i] < '0' || argv[index][i] > '9') && argv[index][i] != '-' && argv[index][i] != '+')

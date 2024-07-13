@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:57:01 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/12 19:26:17 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/13 18:14:03 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,14 +162,10 @@ int checksolosign(char *str)
 }
 int	doublon(t_push_swap *all)
 {
-	// ft_printf("OE");
 	int i = 0;
 	int j = 0;
-	ft_printf(" value i = [%d]\n", i);
-	ft_printf(" value nb_numbers = [%d]\n", all->nb_numbers);
 	while(i < all->nb_numbers - 1)
 	{
-		ft_printf("INSIDE\n");
 		j = i + 1;
 		while(j < all->nb_numbers)
 		{
@@ -188,8 +184,6 @@ int	doublon(t_push_swap *all)
 }
 void	print(t_list *print)
 {
-	// int node = 0;
-	// ft_printf("MATHIEU\n");
 	t_list *tmp;
 
 	if (print)
@@ -197,7 +191,7 @@ void	print(t_list *print)
 		tmp = print;
 		while (tmp != NULL)
 		{
-			ft_printf("MATHIEU\n");
+			// ft_printf("MATHIEU\n");
 			printf("[%d]\n",(int)tmp->content);
 			tmp = tmp->next;
 		}
