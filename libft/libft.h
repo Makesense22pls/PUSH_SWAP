@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 09:59:43 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/11 16:34:37 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/12 18:49:44 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
 
 long long int		ft_atoi(char *str);

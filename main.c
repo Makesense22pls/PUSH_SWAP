@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:09 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/11 17:45:55 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:11:02 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	 main(int argc, char **argv)
 		if (check_min_max(argc, argv,all) == 1)
 			return (EXIT_FAILURE);
 		ft_printf("CHECK3\n");
+		goinlinked(all);
 		// ft_printf("[%d]", all->split_result[0])
 	}
 	return (EXIT_SUCCESS);

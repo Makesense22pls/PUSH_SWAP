@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:26:37 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/11 16:56:50 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:17:37 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ t_push_swap	*ft_innit(void)
 	innit->atoi_result = NULL;
 	innit->count_nb = 0;
 	innit->nb_argc = 0;
+	innit->nb_numbers = 0;
+	innit->A = NULL;
+	innit->B = NULL;
 
 	return (innit);
 }

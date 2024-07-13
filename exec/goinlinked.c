@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   goinlinked.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/02 21:44:16 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/12 18:50:48 by mafourni         ###   ########.fr       */
+/*   Created: 2024/07/12 18:59:59 by mafourni          #+#    #+#             */
+/*   Updated: 2024/07/12 19:35:23 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+#include "header/push_swap.h"
+
+void	goinlinked(t_push_swap *all)
 {
-	t_list	*tmp;
-
-	if (*lst == NULL)
+	int h = 0;
+	int i = 0;
+	int check = 0;
+	
+	while (i < all->nb_numbers)
 	{
-		*lst = new;
-		(*lst)->next = NULL;
-		(*lst)->prev = NULL;
-		return ;
+		if (check++ == 0)
+			all->A = ft_lstnew((void *)all->atoi_result[i++]);
+		ft_lstadd_back(&all->A,ft_lstnew((void *)all->atoi_result[i]));
+		i++;
 	}
-	tmp = *lst;
-	while ((tmp)->next != NULL)
-		(tmp) = (tmp)->next;
-	(tmp)->next = new;
-	new->next = NULL;
+	h = ft_lstsize(all->A);
+	printf("---[%d]---\n", h);
+	print(all->A);
 }

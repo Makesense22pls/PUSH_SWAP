@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:57:01 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/11 19:25:10 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:26:17 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	check_min_max(int argc, char **argv, t_push_swap *all)
 		if (moreargtoatoi(argv,all) == 1)
 			return(1);
 	}
+	if (doublon(all) == 1)
+		return(1);
 	return (0);
 	
 }
@@ -84,6 +86,7 @@ int		twoargtoatoi(char **str,t_push_swap *all)
 	}
 	while(all->split_result[i]!= NULL)
 		i++;
+	all->nb_numbers = i;
 	all->atoi_result = malloc(sizeof(long int *) * (i));
 	i = 0;
 	while (all->split_result[i] != NULL)
@@ -119,7 +122,7 @@ int		moreargtoatoi(char **str,t_push_swap *all)
 		i++;
 	}
 	all->split_result[i] = NULL;
-	if (ft_checkifgood(all) == 0)
+	if (ft_checkifgood(all) == 1)
 	{
 		ft_printf("NOT GOOD\n");
 		return(1);
@@ -127,6 +130,7 @@ int		moreargtoatoi(char **str,t_push_swap *all)
 	i = 0;
 	while(all->split_result[i]!= NULL)
 		i++;
+	all->nb_numbers = i;
 	all->atoi_result = malloc(sizeof(long int *) * (i));
 	i = 0;
 	while (all->split_result[i] != NULL)
@@ -156,21 +160,48 @@ int checksolosign(char *str)
 	}
 	return (0);
 }
-int	doublo
-// void	print(t_list *print)
-// {
-// 	int node = 0;
-// 	t_list *tmp;
+int	doublon(t_push_swap *all)
+{
+	// ft_printf("OE");
+	int i = 0;
+	int j = 0;
+	ft_printf(" value i = [%d]\n", i);
+	ft_printf(" value nb_numbers = [%d]\n", all->nb_numbers);
+	while(i < all->nb_numbers - 1)
+	{
+		ft_printf("INSIDE\n");
+		j = i + 1;
+		while(j < all->nb_numbers)
+		{
+			if (all->atoi_result[i] == all->atoi_result[j])
+			{
+				ft_printf(" I = [%d]\n",all->atoi_result[i]);
+				ft_printf(" J =[%d]\n",all->atoi_result[j]);
+				ft_printf("DOUBLON FOUND\n");
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return(0);
+}
+void	print(t_list *print)
+{
+	// int node = 0;
+	// ft_printf("MATHIEU\n");
+	t_list *tmp;
 
-// 	if (print)
-// 	{
-// 		tmp = print;
-// 		while (tmp != NULL)
-// 		{
-// 			printf("%s",tmp->content);
-// 			tmp = tmp->next;
-// 		}
-// 	}
-// 	else
-// 		printf("ERROR IN PRINTING LIST EMPTY");
-// }
+	if (print)
+	{
+		tmp = print;
+		while (tmp != NULL)
+		{
+			ft_printf("MATHIEU\n");
+			printf("[%d]\n",(int)tmp->content);
+			tmp = tmp->next;
+		}
+	}
+	else
+		printf("ERROR IN PRINTING LIST EMPTY");
+}

@@ -6,7 +6,7 @@
 #    By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 17:01:19 by mafourni          #+#    #+#              #
-#    Updated: 2024/07/11 17:00:06 by mafourni         ###   ########.fr        #
+#    Updated: 2024/07/12 19:12:15 by mafourni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
 RM = rm -f
 
 # SRC
-SRC = parsing/Ck_min_max_sign.c parsing/Ck_wrong_char.c main.c utils/innit.c 
+SRC = parsing/Ck_min_max_sign.c parsing/Ck_wrong_char.c main.c utils/innit.c exec/goinlinked.c
 OBJ = $(SRC:.c=.o)
 
 

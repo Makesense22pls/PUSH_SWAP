@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/11 19:22:06 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/12 19:18:29 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ typedef	struct s_push_swap
 	long 	*atoi_result;
 	int		index;
 	int		nb_argc;
+	int		nb_numbers;
+	t_list 	*A;
+	t_list 	*B;
 }			t_push_swap;
 
 int		check_min_max(int argc, char **argv, t_push_swap *all);
@@ -36,9 +39,11 @@ t_push_swap	*ft_mallocstruc(t_push_swap *innit);
 
 
 //CHECK SIGN
-int	ft_checkifgood(t_push_swap *all);
+int		ft_checkifgood(t_push_swap *all);
 int		count_sign(char *str);
 int		twoargtoatoi(char **str,t_push_swap *all);
 int		moreargtoatoi(char **str,t_push_swap *all);
 int		checksolosign(char *str);
-// void	print(t_list *print);
+int		doublon(t_push_swap *all);
+void	goinlinked(t_push_swap *all);
+void	print(t_list *print);
