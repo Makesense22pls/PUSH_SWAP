@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:09 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/13 18:19:55 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/14 18:29:08 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	 main(int argc, char **argv)
 {
-	// int i = 0;
+	int i = 0;
 	t_push_swap *all;
 	if (argc >= 2)
 	{
@@ -32,7 +32,10 @@ int	 main(int argc, char **argv)
 			return (EXIT_FAILURE);
 		ft_printf("CHECK3\n");
 		goinlinked(all);
-		ft_swap_a(all);
+		i = ft_lstsize(all->A);
+		print(all->A);
+		if (i == 3)
+			ft_sort3numbers(all);
 		ft_printf("\nAFTER SWAP :\n");
 		print(all->A);
 	}

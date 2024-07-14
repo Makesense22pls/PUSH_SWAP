@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 18:59:59 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/13 17:48:55 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/14 18:28:28 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void	goinlinked(t_push_swap *all)
 	}
 	h = ft_lstsize(all->A);
 	printf("TAILLE DE LA LISTE : ---[%d]---\n", h);
-	print(all->A);
+	// print(all->A);
 }

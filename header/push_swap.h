@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/13 18:56:05 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/14 17:15:36 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,15 @@ void	ft_swap_b(t_push_swap *all);
 void	ft_push_ss(t_push_swap *all);
 void	ft_push_a(t_push_swap *all);
 void	ft_push_b(t_push_swap *all);
+void	ft_rotate_ra(t_push_swap *all);
+void	ft_rotate_rb(t_push_swap *all);
+void	ft_rotate_rra(t_push_swap *all);
+void 	ft_rotate_rrb(t_push_swap *all);
+void 	ft_rotate_rrr(t_push_swap *all);
 
+// SORT NUMBERS
+
+void	ft_sort3numbers(t_push_swap *all);
 
 //CHECK SIGN
 int		ft_checkifgood(t_push_swap *all);

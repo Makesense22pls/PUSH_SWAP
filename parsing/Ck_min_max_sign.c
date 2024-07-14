@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:57:01 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/13 18:14:03 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/14 15:27:33 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,6 +196,25 @@ void	print(t_list *print)
 			tmp = tmp->next;
 		}
 	}
+	else
+		printf("ERROR IN PRINTING LIST EMPTY");
+}
+
+void	check(t_list *print)
+{
+	t_list *tmp;
+
+	if (print)
+	{
+		tmp = print;
+		while (tmp != NULL)
+		{
+			// ft_printf("MATHIEU\n");
+			printf("[%d]\n",(int)tmp->content);
+			tmp = tmp->next;
+		}
+	}
+	
 	else
 		printf("ERROR IN PRINTING LIST EMPTY");
 }
