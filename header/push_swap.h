@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/14 17:15:36 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/15 18:57:45 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef	struct s_push_swap
 	int		nb_numbers;
 	t_list 	*A;
 	t_list 	*B;
+	int		count_call;
 }			t_push_swap;
 
 int		check_min_max(int argc, char **argv, t_push_swap *all);
@@ -51,6 +52,7 @@ void 	ft_rotate_rrr(t_push_swap *all);
 // SORT NUMBERS
 
 void	ft_sort3numbers(t_push_swap *all);
+void	ft_findless4(t_push_swap *all);
 
 //CHECK SIGN
 int		ft_checkifgood(t_push_swap *all);
@@ -61,3 +63,6 @@ int		checksolosign(char *str);
 int		doublon(t_push_swap *all);
 void	goinlinked(t_push_swap *all);
 void	print(t_list *print);
+
+
+void	ft_sort(t_push_swap *all, int i);

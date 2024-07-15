@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:57:01 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/14 15:27:33 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/15 17:37:54 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,10 +191,10 @@ void	print(t_list *print)
 		tmp = print;
 		while (tmp != NULL)
 		{
-			// ft_printf("MATHIEU\n");
 			printf("[%d]\n",(int)tmp->content);
 			tmp = tmp->next;
 		}
+		printf("END\n");
 	}
 	else
 		printf("ERROR IN PRINTING LIST EMPTY");
@@ -209,7 +209,6 @@ void	check(t_list *print)
 		tmp = print;
 		while (tmp != NULL)
 		{
-			// ft_printf("MATHIEU\n");
 			printf("[%d]\n",(int)tmp->content);
 			tmp = tmp->next;
 		}

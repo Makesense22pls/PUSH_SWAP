@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 17:38:54 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/14 17:21:40 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/15 19:30:28 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_swap_a(t_push_swap *all)
 		return;
 	all->A->content = all->A->next->content;
 	all->A->next->content = tmp_content;
-	ft_printf("[sa]\n");
+	ft_printf("-[%d]-[sa]\n",++all->count_call);
 }
 
 void	ft_swap_b(t_push_swap *all)
@@ -33,26 +33,42 @@ void	ft_swap_b(t_push_swap *all)
 		return;
 	all->B->content = all->B->next->content;
 	all->B->next->content = tmp_content;
-	ft_printf("[sb]\n");
+	ft_printf("-[%d]-[sb]\n"), ++all->count_call;
 }
 
 void	ft_push_ss(t_push_swap *all)
 {
 	ft_swap_a(all);
 	ft_swap_b(all);
-	ft_printf("[ss]\n");
+	ft_printf("-[%d]-[ss]\n"), ++all->count_call;
 }
 
 void	ft_push_a(t_push_swap *all)
 {
-	ft_lstadd_front(&all->A, all->B);
-	ft_printf("[pa]\n");
+	t_list *tmp;
+
+    if (NULL == all->B)
+        return;
+    tmp = all->B;
+    all->B = (all->B)->next;
+    tmp->next = all->A;
+    all->A = tmp;
+	// ft_lstadd_front(&all->A, all->B);
+	ft_printf("-[%d]-[pa]\n"), ++all->count_call;
 }
 
 void	ft_push_b(t_push_swap *all)
 {
-	ft_lstadd_front(&all->B, all->A);
-	ft_printf("[pb]\n");
+	// ft_lstadd_front(&all->A, all->B);
+	t_list *tmp;
+
+    if (NULL == all->A)
+        return;
+    tmp = all->A;
+    all->A = (all->A)->next;
+    tmp->next = all->B;
+    all->B = tmp;
+	ft_printf("-[%d]-[pb]\n"), ++all->count_call;
 }
 
 
@@ -68,7 +84,7 @@ void	ft_rotate_ra(t_push_swap *all)
 	ft_lstadd_back(&all->A,all->A);
 	
 	all->A = tmp_headnext;
-	ft_printf("[ra]\n");
+	ft_printf("-[%d]-[ra]\n"), ++all->count_call;
 }
 
 void	ft_rotate_rb(t_push_swap *all)
@@ -83,14 +99,14 @@ void	ft_rotate_rb(t_push_swap *all)
 	ft_lstadd_back(&all->B,all->B);
 	
 	all->B = tmp_headnext;
-	ft_printf("[rb]\n");
+	ft_printf("-[%d]-[rb]\n"), ++all->count_call;
 }
 
 void	ft_rotate_rr(t_push_swap *all)
 {
 	ft_rotate_ra(all);
 	ft_rotate_rb(all);
-	ft_printf("[rr]\n");
+	ft_printf("-[%d]-[rr]\n"), ++all->count_call;
 }
 
 void ft_rotate_rra(t_push_swap *all)
@@ -112,7 +128,7 @@ void ft_rotate_rra(t_push_swap *all)
 	ft_lstadd_front(&all->A,tmp_tail);
 	if (prev)
 		prev->next = NULL;
-	ft_printf("[rra]\n");
+	ft_printf("-[%d]-[rra]\n", ++all->count_call);
 }
 
 void ft_rotate_rrb(t_push_swap *all)
@@ -134,12 +150,12 @@ void ft_rotate_rrb(t_push_swap *all)
 	ft_lstadd_front(&all->B,tmp_tail);
 	if (prev)
 		prev->next = NULL;
-	ft_printf("[rrb]\n");
+	ft_printf("-[%d]-[rrb]\n", ++all->count_call);
 }
 
 void 	ft_rotate_rrr(t_push_swap *all)
 {
 	ft_rotate_rra(all);
 	ft_rotate_rrb(all);
-	ft_printf("[rrr]\n");
+	ft_printf("-[%d]-[rrr]\n", ++all->count_call);
 }
