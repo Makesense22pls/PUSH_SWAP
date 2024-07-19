@@ -6,13 +6,14 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 09:59:43 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/15 18:19:36 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/17 20:21:18 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#include <stdbool.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -27,7 +28,8 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-	struct s_list	*prev;
+	int				index;
+	bool			flag;
 }					t_list;
 
 long long int		ft_atoi(char *str);

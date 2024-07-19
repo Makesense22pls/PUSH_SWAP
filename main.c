@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:09 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/15 19:27:08 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/19 18:13:51 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	 main(int argc, char **argv)
 {
-	int i = 0;
+	int wsh;
+	// int tema = 0;
 	t_push_swap *all;
 	if (argc >= 2)
 	{
@@ -30,15 +31,24 @@ int	 main(int argc, char **argv)
 		if (check_min_max(argc, argv,all) == 1)
 			return (EXIT_FAILURE);
 		goinlinked(all);
-		i = ft_lstsize(all->A);
+		all->list_size = ft_lstsize(all->A);
+		ft_printf("LIST SIZE = [%d]", all->list_size);
 		print(all->A);
-		ft_push_b(all);
-		// ft_sort(all, i);
+		wsh = ft_findmax(all);
+		ft_printf("MAX = [%d]", wsh);
+		ft_index(all);
+		// tema = is_list_sorted(all->A);
+		ft_sort(all, all->list_size);
 		ft_printf("\nAFTER SWAP :\n");
-		i = ft_lstsize(all->B);
-		ft_printf("eee[%d]ee", i);
+		ft_printf("A :\n");
 		print(all->A);
 		print(all->B);
+		// while(all->A != NULL)
+		// {
+		// 	all->A->content = (int)all->A->content;
+		// 	all->A = all->A->next;
+		// }
+		// tema = is_list_sorted(all->A);
 	}
 	return (EXIT_SUCCESS);
 }

@@ -1,5 +1,14 @@
 {
 	"files.associations": {
-		"__locale": "c"
-	}
+		"__locale": "c",
+		"ios": "c",
+		"algorithm": "c",
+		"chrono": "c",
+		"limits": "c",
+		"random": "c",
+		"ratio": "c",
+		"libft.h": "c",
+		"bitset": "c"
+	},
+	"cmake.sourceDirectory": "/Users/mafourni/Documents/PUSH_SWAP/TESTER/dependencies/imgui-sfml"
 }

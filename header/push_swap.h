@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/15 18:57:45 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/19 18:02:20 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ typedef	struct s_push_swap
 	int		nb_numbers;
 	t_list 	*A;
 	t_list 	*B;
+	int 	list_size;
 	int		count_call;
+	int max_value;
 }			t_push_swap;
 
 int		check_min_max(int argc, char **argv, t_push_swap *all);
@@ -52,8 +54,12 @@ void 	ft_rotate_rrr(t_push_swap *all);
 // SORT NUMBERS
 
 void	ft_sort3numbers(t_push_swap *all);
-void	ft_findless4(t_push_swap *all);
-
+bool 	is_list_sorted(t_list *head);
+void	ft_findmin(t_push_swap *all);
+int 	ft_findpos(t_list *A, int pos, int min);
+void	ft_index(t_push_swap *all);
+int	ft_findmax(t_push_swap *all);
+int		ft_givethemax(t_push_swap *all);
 //CHECK SIGN
 int		ft_checkifgood(t_push_swap *all);
 int		count_sign(char *str);
@@ -64,5 +70,9 @@ int		doublon(t_push_swap *all);
 void	goinlinked(t_push_swap *all);
 void	print(t_list *print);
 
+
+// RADIX
+void		goradix(t_push_swap *all);
+// static int	ft_max_bits(t_list **list);
 
 void	ft_sort(t_push_swap *all, int i);

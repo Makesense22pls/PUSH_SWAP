@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:57:01 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/15 17:37:54 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/19 17:17:46 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,12 +94,12 @@ int		twoargtoatoi(char **str,t_push_swap *all)
 		// printf(" SPLIT  = [%s]\n",all->split_result[i]);
 		all->atoi_result[i] = (long int)ft_atoi(all->split_result[i]);
 		// printf("ATOI = [%ld]\n",all->atoi_result[i]);
-		if (all->atoi_result[i] < -2147483648)
+		if (all->atoi_result[i] <= -2147483648)
 		{
 			printf("ERROR, LOWER INT_MIN\n");
 			return (1);
 		}
-		if (all->atoi_result[i] > 2147483647)
+		if (all->atoi_result[i] >= 2147483647)
 		{
 			ft_printf("ERROR,  UPPER INT_MAX\n");
 			return (1);
@@ -136,7 +136,7 @@ int		moreargtoatoi(char **str,t_push_swap *all)
 	while (all->split_result[i] != NULL)
 	{
 		all->atoi_result[i] = (long int)ft_atoi(all->split_result[i]);
-		if (all->atoi_result[i] <= -2147483648 || all->atoi_result[i] >= 2147483647)
+		if (all->atoi_result[i] < -2147483648 || all->atoi_result[i] > 2147483647)
 		{
 			printf("ERROR, LOWER INT_MIN OR UPPER INT_MAX");
 			return (1);
