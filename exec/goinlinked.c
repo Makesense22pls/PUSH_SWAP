@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 18:59:59 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/17 21:01:38 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:57:29 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ void	goinlinked(t_push_swap *all)
 	while (i < all->nb_numbers)
 	{
 		if (check++ == 0)
-			all->A = ft_lstnew((void *)all->atoi_result[i++]);
-		ft_lstadd_back(&all->A,ft_lstnew((void *)all->atoi_result[i]));
+			all->A = ft_lstnew(all->atoi_result[i++]);
+		ft_lstadd_back(&all->A, ft_lstnew(all->atoi_result[i]));
 		i++;
 	}
 	h = ft_lstsize(all->A);
-	printf("TAILLE DE LA LISTE : ---[%d]---\n", h);
 }

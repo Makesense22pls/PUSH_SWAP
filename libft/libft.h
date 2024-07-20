@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 09:59:43 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/17 20:21:18 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/19 18:15:44 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 typedef struct s_list
 {
-	void			*content;
+	int				content;
 	struct s_list	*next;
 	int				index;
 	bool			flag;
@@ -68,7 +68,7 @@ size_t	ft_strlcat(char *restrict dst, \
 		const char *restrict src, size_t dstsize);
 size_t	ft_strlcpy(char *restrict dst, \
 		const char *restrict src, size_t dstsize);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);

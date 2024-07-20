@@ -6,43 +6,71 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:09 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/19 18:13:51 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/19 20:03:25 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header/push_swap.h"
 
+void	ft_freeall(t_push_swap *all)
+{
+	int i = 0;
+	if (all->split_result)
+	{
+		while (all->split_result[i])
+		{
+			free(all->split_result[i]);
+			i++;
+		}
+	}
+	free(all->split_result);
+}
 int	 main(int argc, char **argv)
 {
 	int wsh;
 	// int tema = 0;
 	t_push_swap *all;
+	all = NULL;
 	if (argc >= 2)
 	{
 		all = ft_innit();
 		if (argc == 2)
 		{
 			if (argcis2(argc, argv) == 0)
+			{
+				ft_freeall(all);
+				free(all);	
 				return (EXIT_FAILURE);
+			}
 		}
 		else
 			if (argcmore2(argc, argv, all) == 0)
+				{
+				ft_freeall(all);
+				free(all);	
 				return (EXIT_FAILURE);
+				}
 		if (check_min_max(argc, argv,all) == 1)
-			return (EXIT_FAILURE);
+		{
+				ft_freeall(all);
+				free(all);	
+				return (EXIT_FAILURE);
+		}
 		goinlinked(all);
 		all->list_size = ft_lstsize(all->A);
-		ft_printf("LIST SIZE = [%d]", all->list_size);
-		print(all->A);
+		// ft_printf("LIST SIZE = [%d]", all->list_size);
+		// print(all->A);
 		wsh = ft_findmax(all);
-		ft_printf("MAX = [%d]", wsh);
+		// ft_printf("MAX = [%d]", wsh);
 		ft_index(all);
 		// tema = is_list_sorted(all->A);
 		ft_sort(all, all->list_size);
-		ft_printf("\nAFTER SWAP :\n");
-		ft_printf("A :\n");
-		print(all->A);
-		print(all->B);
+		ft_freeall(all);
+		free(all);
+		// ft_printf("\nAFTER SWAP :\n");
+		// ft_printf("A :\n");
+		// print(all->A);
+		// print(all->B);
 		// while(all->A != NULL)
 		// {
 		// 	all->A->content = (int)all->A->content;
@@ -53,32 +81,6 @@ int	 main(int argc, char **argv)
 	return (EXIT_SUCCESS);
 }
 
-// void	print(t_list *print)
-// {
-// 	int node = 0;
-// 	t_list *tmp;
-
-// 	if (print)
-// 	{
-// 		tmp = print;
-// 		while (tmp != NULL)
-// 		{
-// 			printf("%s",tmp->content);
-// 			tmp = tmp->next;
-// 		}
-// 	}
-// 	else
-// 		printf("ERROR IN PRINTING LIST EMPTY");
-// }
-
-
-
-
-// int main()
-// {
-// 	long int i = atoi("2147483650");
-// 	printf("[%ld]\n", i);
-// }
 
 
 

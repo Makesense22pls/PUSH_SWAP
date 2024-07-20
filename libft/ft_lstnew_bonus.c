@@ -6,13 +6,13 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 12:22:02 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/18 20:56:19 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/19 18:15:30 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*newlst;
 

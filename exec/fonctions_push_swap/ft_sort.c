@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 18:02:47 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/19 18:01:23 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/19 18:30:22 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,15 @@ void	ft_findmin(t_push_swap *all)
 	int min = (int)current->content;
 	while (current->next != NULL)
 	{
-		ft_printf(" MIN = [%d]\n", min);
-		ft_printf("(int)current->next->content = [%d]\n",(int)current->next->content);
+		// ft_printf(" MIN = [%d]\n", min);
+		// ft_printf("(int)current->next->content = [%d]\n",(int)current->next->content);
 		if (min > (int)current->next->content)
 				min = (int)current->next->content;
 		current = current->next;
 	}
-	printf(" MIN FINALE = [%d]\n", min);
+	// printf(" MIN FINALE = [%d]\n", min);
 	pos = ft_findpos(all->A, pos, min);
-	printf(" POS = [%d]\n", pos);
+	// printf(" POS = [%d]\n", pos);
 	if (pos == 0)
 		ft_push_b(all);
 	if (pos == 1)
@@ -100,7 +100,7 @@ bool is_list_sorted(t_list *head)
 	t_list *current = head;
 	while (current->next != NULL) 
 	{ 
-		ft_printf("oe\n");
+		// ft_printf("oe\n");
 		if ((int)current->content > (int)current->next->content) 
 			return (false);
 		current = current->next;
@@ -118,7 +118,7 @@ void	ft_index(t_push_swap *all)
 	{
 		if (all->max_value == (int)all->A->content && all->A->index == -1)
 		{
-			ft_printf("IN\n");
+			// ft_printf("IN\n");
 			all->A->index = all->index;
 			all->index --;
 		}
@@ -140,12 +140,12 @@ void	ft_index(t_push_swap *all)
 			all->A = all->A->next;
 		}
 	}
-	all->A = save;
-	while(all->A != NULL)
-	{
-		printf("I-[%d]-I\n", all->A->index);
-		all->A = all->A->next;
-	}
+	// all->A = save;
+	// while(all->A != NULL)
+	// {
+	// 	// printf("I-[%d]-I\n", all->A->index);
+	// 	all->A = all->A->next;
+	// }
 	all->A = save;
 }
 
@@ -171,8 +171,8 @@ int	ft_findmax(t_push_swap *all)
 	int max = (int)all->A->content;
 	while (all->A->next != NULL)
 	{
-		ft_printf(" max = [%d]\n", max);
-		ft_printf("(int)all->A->next->content = [%d]\n",(int)all->A->next->content);
+		// ft_printf(" max = [%d]\n", max);
+		// ft_printf("(int)all->A->next->content = [%d]\n",(int)all->A->next->content);
 		if (max < (int)all->A->next->content)
 				max = (int)all->A->next->content;
 		all->A = all->A->next;

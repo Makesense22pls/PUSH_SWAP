@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:59:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/13 17:49:58 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:45:57 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ bool argcis2(int argc, char **argv)
     i = 0;
     if (argc == 2)
     {
+		if (argv[1][i] == '\0')
+			return (ft_printf("ERROR ARG EMPTY FOUND !\n"), false);
         while (argv[1][i])
         {
             if ((argv[1][i] < '0' || argv[1][i] > '9') && argv[1][i] != ' ' && argv[1][i] != '-' && argv[1][i] != '+')
@@ -48,7 +50,9 @@ bool	argcmore2(int argc, char **argv,t_push_swap *all)
 		while (index < argc)
 		{
 			i = 0;
-			while (argv[index][i] != '\0')
+			if (argv[index][i] == '\0')
+				return (ft_printf("ERROR ARG EMPTY FOUND !\n"), false);
+			while (argv[index][i])
 			{
 				if ((argv[index][i] < '0' || argv[index][i] > '9') && argv[index][i] != '-' && argv[index][i] != '+')
 				{	
