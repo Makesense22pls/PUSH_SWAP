@@ -6,13 +6,13 @@
 #    By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 17:01:19 by mafourni          #+#    #+#              #
-#    Updated: 2024/07/19 18:33:16 by mafourni         ###   ########.fr        #
+#    Updated: 2024/07/20 17:47:03 by mafourni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CFLAGS = -Wall -Werror -Wextra  -g 
+CFLAGS = -Wall -Werror -Wextra -g 
 RM = rm -f
 
 # SRC

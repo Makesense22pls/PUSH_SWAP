@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 18:02:47 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/19 18:30:22 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/20 17:09:40 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,8 +171,6 @@ int	ft_findmax(t_push_swap *all)
 	int max = (int)all->A->content;
 	while (all->A->next != NULL)
 	{
-		// ft_printf(" max = [%d]\n", max);
-		// ft_printf("(int)all->A->next->content = [%d]\n",(int)all->A->next->content);
 		if (max < (int)all->A->next->content)
 				max = (int)all->A->next->content;
 		all->A = all->A->next;

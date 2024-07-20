@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:26:37 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/19 16:04:02 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/20 17:57:23 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,45 @@ t_push_swap	*ft_mallocstruc(t_push_swap *innit)
 	if (!innit)
 		return (0);
 	return (innit);
+}
+
+void	ft_freeall(t_push_swap *all)
+{
+	// int long j = 0;
+	int i = 0;
+	if (all->split_result)
+	{
+		while (all->split_result[i])
+		{
+			free(all->split_result[i]);
+			i++;
+		}
+		free(all->split_result);
+	}
+	if (all->atoi_result != NULL)
+		free(all->atoi_result);
+	if (all->A)
+	{
+		t_list *tmp;
+		tmp = NULL;
+		while(all->A != NULL)
+		{
+			all->A = tmp;
+			free(all->A);
+			all->A =tmp->next;
+		}
+		free(all->A);
+	}
+	if (all->B)
+	{
+		t_list *tmp;
+		tmp = NULL;
+		while(all->B != NULL)
+		{
+			all->A = tmp;
+			free(all->B);
+			all->B = tmp->next;
+		}
+		free(all->B);
+	}
 }

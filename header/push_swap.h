@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/19 18:02:20 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/20 17:41:02 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ typedef	struct s_push_swap
 	int max_value;
 }			t_push_swap;
 
+
+
+
+void	ft_freeall(t_push_swap *all);
 int		check_min_max(int argc, char **argv, t_push_swap *all);
 bool	argcis2(int argc, char **argv);
 bool	argcmore2(int argc, char **argv, t_push_swap *all);
