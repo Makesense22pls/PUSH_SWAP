@@ -30,7 +30,7 @@ OBJ = $(SRC:.c=.o)
 all : $(NAME)
 
 %.o: %.c
-	cc -Wall -Werror -Wextra -c $< -o $@ -I.
+	cc -Wall -Werror -Wextra -g -c $< -o $@ -I.
 
 $(NAME):	$(OBJ)
 	ar rcs $@ $(OBJ)

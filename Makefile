@@ -6,18 +6,18 @@
 #    By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/05 17:01:19 by mafourni          #+#    #+#              #
-#    Updated: 2024/07/20 17:47:03 by mafourni         ###   ########.fr        #
+#    Updated: 2024/07/20 20:06:07 by mafourni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CFLAGS = -Wall -Werror -Wextra -g 
+CFLAGS = # ¨-Wall -Werror -Wextra -g 
 RM = rm -f
 
 # SRC
-SRC = parsing/Ck_min_max_sign.c parsing/Ck_wrong_char.c main.c utils/innit.c exec/goinlinked.c \
-		exec/fonctions_push_swap/ft_swap_a.c exec/fonctions_push_swap/ft_3nombres.c exec/fonctions_push_swap/ft_sort.c
+SRC = parsing/Ck_min_max_sign.c parsing/Ck_wrong_char.c main.c utils/innit.c exec/goinlinked.c parsing/maxsign2.c\
+		exec/fonctions_push_swap/swapthingsp2.c exec/fonctions_push_swap/swapthingsp1.c exec/fonctions_push_swap/ft_3nombres.c exec/fonctions_push_swap/sort.c exec/fonctions_push_swap/pos_sorted_index.c
 OBJ = $(SRC:.c=.o)
 
 
