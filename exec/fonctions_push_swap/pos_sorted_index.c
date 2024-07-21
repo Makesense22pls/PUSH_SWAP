@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 18:02:47 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/21 17:39:01 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:34:48 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_findmin(t_push_swap *all)
 		current = current->next;
 	}
 	pos = ft_findpos(all->a, pos, min);
+	printf("POS = [%d]\n", pos);
 	if (pos == 0)
 		ft_push_b(all);
 	if (pos == 1)
@@ -35,11 +36,11 @@ void	ft_findmin(t_push_swap *all)
 		ft_swap_a(all);
 		ft_push_b(all);
 	}
-	if (pos == 2 || pos == 3)
-		normpos2_3(all, pos);
+	if (pos == 2 || pos == 3 || pos == 4)
+		normpos2_3_4(all, pos);
 }
 
-void	normpos2_3(t_push_swap *all, int pos)
+void	normpos2_3_4(t_push_swap *all, int pos)
 {
 	if (pos == 2)
 	{
@@ -48,6 +49,11 @@ void	normpos2_3(t_push_swap *all, int pos)
 		ft_push_b(all);
 	}
 	if (pos == 3)
+	{
+		ft_rotate_rra(all);
+		ft_push_b(all);
+	}
+	if (pos == 4)
 	{
 		ft_rotate_rra(all);
 		ft_push_b(all);

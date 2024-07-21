@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/21 17:48:39 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:35:36 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void		goradix(t_push_swap *all);
 // static int	ft_max_bits(t_list **list);
 void		ft_sort(t_push_swap *all, int i);
 int			ft_givethemax(t_push_swap *all);
-void		normpos2_3(t_push_swap *all, int pos);
+void		normpos2_3_4(t_push_swap *all, int pos);
 void		indexation(t_push_swap *all, t_list *save);
 void		ft_go(t_push_swap *all, int i);
 

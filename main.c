@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:09 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/21 17:49:50 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:41:21 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	main(int argc, char **argv)
 			if (argcmore2(argc, argv, all) == 0)
 				return (ft_freeall(all, argc), free(all), EXIT_FAILURE);
 		if (check_min_max(argc, argv, all) == 1)
-			return (ft_freeall(all, argc), free(all), EXIT_FAILURE);
+			return (ft_freeall(all, argc), free(all->atoi_result), \
+			free(all), EXIT_FAILURE);
 		goinlinked(all);
 		if (is_list_sorted(all->a) == 1)
 			return (free_norminette(all, argc), EXIT_SUCCESS);

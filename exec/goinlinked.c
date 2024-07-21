@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 18:59:59 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/21 17:26:28 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:42:17 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	goinlinked(t_push_swap *all)
 	int	i;
 	int	check;
 
-	h = 0;
 	i = 0;
 	check = 0;
 	while (i < all->nb_numbers)
