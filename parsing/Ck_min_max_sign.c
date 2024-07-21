@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 15:57:01 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/20 20:27:24 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 17:25:20 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	twoargtoatoi(char **str, t_push_swap *all)
 	all->split_result = ft_split(str[1], 32);
 	if (ft_checkifgood(all, i) == 1)
 	{
-		ft_printf("NOT GOOD\n");
+		ft_printf("ERROR\n");
 		return (1);
 	}
 	while (all->split_result[i] != NULL)
@@ -115,7 +115,7 @@ int	moreargtoatoi(char **str, t_push_swap *all)
 	}
 	all->split_result[i] = NULL;
 	if (ft_checkifgood(all, i) == 1)
-		return (ft_printf("NOT GOOD\n"), 1);
+		return (ft_printf("ERROR\n"), 1);
 	ft_go(all, i);
 	all->nb_numbers = i;
 	all->atoi_result = malloc(sizeof(long int *) * (i));

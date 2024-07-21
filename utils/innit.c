@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 15:26:37 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/20 20:20:19 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 17:47:55 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,53 @@ t_push_swap	*ft_mallocstruc(t_push_swap *innit)
 	return (innit);
 }
 
-void	ft_freeall(t_push_swap *all)
+void	ft_freeall(t_push_swap *all, int argc)
 {
 	int	i;
-
 	i = 0;
-	if (all->split_result)
+	if (argc == 2)
 	{
-		while (all->split_result[i])
+		if (all->split_result)
 		{
-			free(all->split_result[i]);
-			i++;
+			while (all->split_result[i] != NULL)
+			{
+				free(all->split_result[i]);
+				i++;
+			}
+			free(all->split_result);
 		}
-		free(all->split_result);
 	}
+	if (argc > 2)
+	{
+		if (all->split_result)
+		{
+			free(all->split_result);
+		}
+	}
+}
+void free_linked_list(t_list *head_a, t_list *head_b) 
+{
+	t_list *tmp_a;
+	t_list *tmp_b;
+
+	while (head_a)
+	{
+		tmp_a = head_a;
+		head_a = head_a->next;
+		free(tmp_a);
+	}
+	while (head_b)
+	{
+		tmp_b = head_b;
+		head_b = head_b->next;
+		free(tmp_b);
+	}
+}
+
+void free_norminette(t_push_swap *all, int argc)
+{
+	free_linked_list(all->a,all->b);
+	ft_freeall(all,argc);
+	free(all->atoi_result);
+	free(all);
 }

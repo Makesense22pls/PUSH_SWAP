@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 16:59:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/20 20:27:20 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 17:24:32 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ bool	argcis2(int argc, char **argv)
 			}
 			i++;
 		}
-		ft_printf("GO\n");
 	}
 	else
 		return (false);

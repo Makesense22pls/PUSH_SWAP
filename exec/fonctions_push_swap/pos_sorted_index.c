@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 18:02:47 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/20 20:20:04 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 17:39:01 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	ft_index(t_push_swap *all)
 {
 	t_list	*save;
 
+	all->list_size = ft_lstsize(all->a);
 	all->max_value = ft_findmax(all);
 	all->index = all->list_size -1;
 	save = all->a;
@@ -88,6 +89,7 @@ void	ft_index(t_push_swap *all)
 	all->index = all->list_size - 2;
 	indexation(all, save);
 	all->a = save;
+	ft_sort(all, all->list_size);
 }
 
 void	indexation(t_push_swap *all, t_list *save)

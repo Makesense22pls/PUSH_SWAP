@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:09 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/20 20:20:04 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 17:49:50 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,18 @@ int	main(int argc, char **argv)
 		if (argc == 2)
 		{
 			if (argcis2(argc, argv) == 0)
-				return (ft_freeall(all), free(all), EXIT_FAILURE);
+				return (ft_freeall(all, argc), free(all), EXIT_FAILURE);
 		}
 		else
 			if (argcmore2(argc, argv, all) == 0)
-				return (ft_freeall(all), free(all), EXIT_FAILURE);
+				return (ft_freeall(all, argc), free(all), EXIT_FAILURE);
 		if (check_min_max(argc, argv, all) == 1)
-			return (ft_freeall(all), free(all), EXIT_FAILURE);
+			return (ft_freeall(all, argc), free(all), EXIT_FAILURE);
 		goinlinked(all);
-		all->list_size = ft_lstsize(all->a);
+		if (is_list_sorted(all->a) == 1)
+			return (free_norminette(all, argc), EXIT_SUCCESS);
 		ft_index(all);
-		ft_sort(all, all->list_size);
-		ft_freeall(all);
-		free(all);
+		free_norminette(all, argc);
 	}
 	return (EXIT_SUCCESS);
 }

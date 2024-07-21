@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 13:41:49 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/20 20:25:55 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 17:48:39 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_push_swap
 
 t_push_swap	*ft_innit(void);
 t_push_swap	*ft_mallocstruc(t_push_swap *innit);
-void		ft_freeall(t_push_swap *all);
+void		ft_freeall(t_push_swap *all, int argc);
 int			check_min_max(int argc, char **argv, t_push_swap *all);
 bool		argcis2(int argc, char **argv);
 bool		argcmore2(int argc, char **argv, t_push_swap *all);
@@ -70,9 +70,12 @@ void		goinlinked(t_push_swap *all);
 void		print(t_list *print);
 // RADIX
 void		goradix(t_push_swap *all);
-static int	ft_max_bits(t_list **list);
+// static int	ft_max_bits(t_list **list);
 void		ft_sort(t_push_swap *all, int i);
 int			ft_givethemax(t_push_swap *all);
 void		normpos2_3(t_push_swap *all, int pos);
 void		indexation(t_push_swap *all, t_list *save);
 void		ft_go(t_push_swap *all, int i);
+
+void		free_linked_list(t_list *head_a, t_list *head_b);
+void		free_norminette(t_push_swap *all, int argc);

@@ -6,7 +6,7 @@
 /*   By: mafourni <mafourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 18:59:59 by mafourni          #+#    #+#             */
-/*   Updated: 2024/07/20 20:20:04 by mafourni         ###   ########.fr       */
+/*   Updated: 2024/07/21 17:26:28 by mafourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ void	goinlinked(t_push_swap *all)
 	{
 		if (check++ == 0)
 			all->a = ft_lstnew(all->atoi_result[i++]);
-		ft_lstadd_back(&all->a, ft_lstnew(all->atoi_result[i]));
+		if (all->nb_numbers > 1)
+			ft_lstadd_back(&all->a, ft_lstnew(all->atoi_result[i]));
 		i++;
 	}
 	h = ft_lstsize(all->a);
